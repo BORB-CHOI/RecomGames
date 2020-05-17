@@ -1,0 +1,28 @@
+{
+  "name": "recom-games",
+  "version": "1.0.0",
+  "description": "A site that uses web crawling or APIs to extract game information and recommend games based on that information.",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BORB-CHOI/recom-games.git"
+  },
+  "author": "Choi Bi-Seong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BORB-CHOI/recom-games/issues"
+  },
+  "homepage": "https://github.com/BORB-CHOI/recom-games#readme",
+  "dependencies": {
+    "@babel/node": "^7.8.7",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6"
+  }
+}
