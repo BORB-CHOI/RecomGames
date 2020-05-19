@@ -1,12 +1,13 @@
-
 from scrapper import get_jobs
-
+import json
 import sys
 
-print sys.argv
+sys.stdout.reconfigure(encoding='utf-8')
 
-# get_jobs('vue')
+dict_jobs = get_jobs('vue')
+jobs = json.dumps(dict_jobs, ensure_ascii=False)
 
+print(jobs)
 # db = {}
 
 

@@ -1,17 +1,26 @@
-import { pythonShell } from 'python-shell';
+import { PythonShell } from "python-shell";
+import path from "path";
 
-const options = {
-  mode: 'json',
-  pythonPath: '',
-  pythonOptions: ['-u'], // get print results in real-time
-  scriptPath: '',
-  args: ['a', 'b', 'c'],
+const pyfunction = () => {
+  PythonShell.defaultOptions = { mode: "text", encoding: "utf-8" };
+
+  const pyshell = new PythonShell(path.join(__dirname, "scrap_init.py"));
+
+  // sends a message to the Python script via stdin
+  pyshell.send("hello");
+
+  pyshell.on("message", (message) => {
+    // received a message sent from the Python script (a simple "print" statement)
+    console.log(message);
+  });
+
+  // end the input stream and allow the process to exit
+  pyshell.end((err, code, signal) => {
+    if (err) throw err;
+    console.log("The exit code was: " + code);
+    console.log("The exit signal was: " + signal);
+    console.log("finished!!");
+  });
 };
 
-pythonShell.run('my_script.py', options, (err, results) => {
-  if (err) throw err;
-  // results is an array consisting of messages collected during execution
-  console.log('results: %j', results);
-});
-
-export default pythonShell;
+export default pyfunction;

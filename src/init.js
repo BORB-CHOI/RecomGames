@@ -1,6 +1,9 @@
-import app from './app';
+import pyfunction from "./controllers/pythonInit";
+import app from "./app";
 
-const PORT = '9999';
+pyfunction();
+
+const PORT = "9999";
 
 const handlelistening = () => {
   console.log(`✔ Your LocalHost : http://localhost:${PORT}`);
