@@ -1,10 +1,13 @@
 
 from scrapper import get_jobs
-import json
 
-get_jobs('vue')
+import sys
 
-db = {}
+print sys.argv
+
+# get_jobs('vue')
+
+# db = {}
 
 
 # @app.route("/")

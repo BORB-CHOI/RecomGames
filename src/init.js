@@ -1,6 +1,6 @@
-import app from "./app";
+import app from './app';
 
-const PORT = "9999";
+const PORT = '9999';
 
 const handlelistening = () => {
   console.log(`✔ Your LocalHost : http://localhost:${PORT}`);
