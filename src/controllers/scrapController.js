@@ -1,10 +1,10 @@
 import { PythonShell } from "python-shell";
 import path from "path";
 
-const pyfunction = () => {
+const pyFunction = () => {
   PythonShell.defaultOptions = { mode: "text", encoding: "utf-8" };
 
-  const pyshell = new PythonShell(path.join(__dirname, "scrap_init.py"));
+  const pyshell = new PythonShell(path.join(__dirname, "../python/scrap_init.py"));
 
   // sends a message to the Python script via stdin
   pyshell.send("hello");
@@ -23,4 +23,4 @@ const pyfunction = () => {
   });
 };
 
-export default pyfunction;
+export default pyFunction;

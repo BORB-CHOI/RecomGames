@@ -1,7 +1,6 @@
-import pyfunction from "./controllers/pythonInit";
+import pyfunction from "./controllers/scrapController";
 import app from "./app";
 
-pyfunction();
 
 const PORT = "9999";
 
@@ -10,3 +9,5 @@ const handlelistening = () => {
 };
 
 app.listen(PORT, handlelistening);
+
+pyfunction();

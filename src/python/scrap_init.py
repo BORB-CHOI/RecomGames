@@ -1,4 +1,4 @@
-from scrapper import get_jobs
+from soScraper import get_jobs
 import json
 import sys
 
@@ -8,6 +8,7 @@ dict_jobs = get_jobs('vue')
 jobs = json.dumps(dict_jobs, ensure_ascii=False)
 
 print(jobs)
+
 # db = {}
 
 
