@@ -1,4 +1,7 @@
+# config
 package-lock.json
+.eslintrc.json
+.gitattributes
 
 # Logs
 logs
