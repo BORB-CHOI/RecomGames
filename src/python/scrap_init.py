@@ -1,4 +1,4 @@
-from soScraper import get_jobs
+from so_scraper import get_jobs
 import json
 import sys
 
