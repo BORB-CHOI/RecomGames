@@ -1,5 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+from multiprocessing import Pool
+from operator import itemgetter
+import time
 
 URL = "https://www.metacritic.com/browse/games/release-date/available/pc/metascore"
 
@@ -13,14 +16,34 @@ def get_last_page(url):
     return int(last_page)
 
 
-def trans_RD(en_date):
-    kr_date = en_date
-    return kr_date
+def str_to_int(month):
+    int_month = {
+        'Jan': '01',
+        'Feb': '02',
+        'Mar': '03',
+        'Apr': '04',
+        'May': '05',
+        'Jun': '06',
+        'Jul': '07',
+        'Aug': '08',
+        'Sep': '09',
+        'Oct': '10',
+        'Nov': '11',
+        'Dec': '12'
+    }
+    return int_month.get(month, "-*Not a vaild month value.*-")
 
 
-def trans_genre(en_genre):
-    kr_genre = en_genre
-    return kr_genre
+def trans_RD(date):
+    _date = date.split()
+    year = _date[2]
+    month = _date[0]
+    day = _date[1].strip(',')
+    month = str_to_int(month)
+    if int(day) < 10:
+        day = '0' + day
+    date_id = year + month + day
+    return date_id
 
 
 def str_merge(strings):
@@ -53,7 +76,9 @@ def extract_gmae(game_url):
 
     genres = str_merge(genres)
 
-    return print({'title': title, 'company': company, 'releaseDate': release_date, 'platform': platform, 'mainImg': main_img, 'genres': genres, 'link': f"https://www.metacritic.com{game_url}"})
+    release_date = trans_RD(release_date)
+
+    return {'title': title, 'company': company, 'releaseDate': release_date, 'platform': platform, 'mainImg': main_img, 'genres': genres, 'link': f"https://www.metacritic.com{game_url}"}
 
 
 def extract_games(last_page, url):
@@ -63,19 +88,29 @@ def extract_games(last_page, url):
                                 headers={"User-Agent": "Mozilla"})
         soup = BeautifulSoup(response.text, "html.parser")
         results = soup.find_all("li", class_="game_product")
-        # for result in results:
-        #     game_url = result.div.a["href"]
-        #     game = extract_gmae(game_url)
-        #     games.append(game)
-        game_url = results[1].div.a["href"]
-        game = extract_gmae(game_url)
-        games.append(game)
+        for result in results:
+            game_url = result.div.a["href"]
+            if __name__ == '__main__':
+                pool = Pool(processes=4)
+                pool.map(games.append, extract_gmae(game_url))
+                # game = extract_gmae(game_url)
+                # games.append(game)
+        games = sorted(games, key=itemgetter('releaseDate'))
     return games
+
+
+def games_print(games):
+    print(games)
 
 
 def get_games(url):
     last_page = get_last_page(url)
-    extract_games(last_page, url)
+    start_time = time.time()
+    # games_print(extract_games(last_page, url))
+    if __name__ == '__main__':
+        pool = Pool(processes=4)
+        pool.map(games_print, extract_games(last_page, url))
+    print("--- %s seconds ---" % (time.time() - start_time))
 
 
 get_games(URL)
