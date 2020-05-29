@@ -90,11 +90,8 @@ def extract_games(last_page, url):
         results = soup.find_all("li", class_="game_product")
         for result in results:
             game_url = result.div.a["href"]
-            if __name__ == '__main__':
-                pool = Pool(processes=4)
-                pool.map(games.append, extract_gmae(game_url))
-                # game = extract_gmae(game_url)
-                # games.append(game)
+            game = extract_gmae(game_url)
+            games.append(game)
         games = sorted(games, key=itemgetter('releaseDate'))
     return games
 
