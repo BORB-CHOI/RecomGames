@@ -14,7 +14,7 @@ app.use(helmet());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extends: true }));
-app.use(morgan("dev"));
+app.use(morgan("dev")); // http status
 
 app.use(routes.users, userRouter);
 app.use(routes.games, gameRouter);

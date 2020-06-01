@@ -4,9 +4,8 @@ import {} from "../controllers/js/globalController";
 
 const gameRouter = express.Router();
 
-gameRouter.get(routes.games, (req, res) => res.send("This is Game List pages"));
 gameRouter.get(routes.gameDetail, (req, res) =>
-  res.send("This is Game Detail pages")
+  res.send("This is Game List pages")
 );
 
 // view 파일을 만들고 연결 해보자
