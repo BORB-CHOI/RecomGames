@@ -3,10 +3,10 @@ import app from "./app";
 
 const PORT = "9999";
 
-const handlelistening = () => {
+const handleListening = () => {
   console.log(`✔ Your LocalHost : http://localhost:${PORT}`);
 };
 
-app.listen(PORT, handlelistening);
+app.listen(PORT, handleListening);
 
 // pyfunction();
