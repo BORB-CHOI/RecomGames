@@ -18,7 +18,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extends: true }));
-app.use(morgan("dev"));
+app.use(morgan("dev")); // http status
 
 app.use(localMiddleware);
 
