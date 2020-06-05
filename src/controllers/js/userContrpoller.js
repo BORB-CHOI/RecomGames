@@ -1,3 +1,3 @@
-export const get_userDetail = (req, res) => {
-  res.send("This is User Detail page.");
+export const getUserProfile = (req, res) => {
+  res.render("userDetail");
 };

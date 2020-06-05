@@ -11,7 +11,7 @@ const GAME_DETAIL = "/:id";
 
 // User
 const USERS = "/users";
-const USER_DETAIL = "/:id";
+const USER_PROFILE = "/:id";
 const USER_EDIT = "/edit";
 const CHANGE_PASSWORD = "/change-password";
 const ME = "/me";
@@ -23,11 +23,11 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
-  userDetail: (id) => {
+  userProfile: (id) => {
     if (id) {
       return `/users/${id}`;
     }
-    return USER_DETAIL;
+    return USER_PROFILE;
   },
   userEdit: USER_EDIT,
   changePassword: CHANGE_PASSWORD,

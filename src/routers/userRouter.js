@@ -1,10 +1,9 @@
 import express from "express";
 import routes from "../routes";
+import { getUserProfile } from "../controllers/js/userContrpoller";
 
 const userRouter = express.Router();
 
-userRouter.get(routes.userDetail, (req, res) =>
-  res.send("This is User Detail pages")
-);
+userRouter.get(routes.userProfile, getUserProfile);
 
 export default userRouter;
