@@ -88,10 +88,10 @@ def extract_games(last_page, url):
                                 headers={"User-Agent": "Mozilla"})
         soup = BeautifulSoup(response.text, "html.parser")
         results = soup.find_all("li", class_="game_product")
-        for result in results:
-            game_url = result.div.a["href"]
-            game = extract_gmae(game_url)
-            games.append(game)
+        # for result in results:
+        game_url = results[0].div.a["href"]
+        game = extract_gmae(game_url)
+        games.append(game)
         games = sorted(games, key=itemgetter('releaseDate'))
     return games
 

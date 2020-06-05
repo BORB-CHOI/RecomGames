@@ -10,8 +10,4 @@ globalRouter.get(routes.login, (req, res) => res.send("This is login pages"));
 globalRouter.get(routes.logout, (req, res) => res.send("This is logout pages"));
 globalRouter.get(routes.search, (req, res) => res.send("This is search pages"));
 
-globalRouter.get(routes.games, (req, res) =>
-  res.send("Wherer is Games pages?")
-);
-
 export default globalRouter;
