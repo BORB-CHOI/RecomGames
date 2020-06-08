@@ -4,7 +4,7 @@
   "description": "A site that uses web crawling or APIs to extract game information and recommend games based on that information.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/init.js --delay 2"
+    "start": "nodemon --exec babel-node src/init.js"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,7 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-import": "^2.21.1",
     "nodemon": "^2.0.4"
   }
 }

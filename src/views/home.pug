@@ -3,4 +3,13 @@ include mixins/gameBlock
 
 block content
     .home-games
-        +gameBlock()
+        each item in games
+            +gameBlock({
+                title:item.title,
+                company:item.company,
+                releaseDate:item.releaseDate,
+                platform:item.platform,
+                mainImg:item.mainImg,
+                genres:item.genres,
+                link:item.link
+            })
