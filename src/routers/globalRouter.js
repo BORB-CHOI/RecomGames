@@ -1,7 +1,7 @@
 import express from "express";
 import routes from "../routes";
-import { getHome, getJoin, getLogin } from "../controllers/js/globalController";
-// import { get_home } from "../controllers/js/globalController";
+import { getHome } from "../controllers/js/gameController";
+import { getJoin, getLogin } from "../controllers/js/userContrpoller";
 
 const globalRouter = express.Router();
 
