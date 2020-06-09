@@ -61,18 +61,31 @@ def extract_gmae(game_url):
     response = requests.get(
         f"https://www.metacritic.com{game_url}", headers={"User-Agent": "Mozilla"})
     soup = BeautifulSoup(response.text, "html.parser")
-    game_info = soup.find("div", class_="left")
-    title = game_info.find("div", class_="content_head").find(
-        "div", class_="product_title").a.get_text(strip=True)
-    platform = game_info.find("div", class_="content_head").find(
-        "div", class_="product_title").span.a.get_text(strip=True)
-    company = game_info.find("div", class_="content_head").find(
-        "div", class_="product_data").ul.find("li", class_="publisher").find("span", class_="data").a.get_text(strip=True)
-    release_date = game_info.find("div", class_="content_head").find(
-        "div", class_="product_data").ul.find("li", class_="release_data").find("span", class_="data").get_text(strip=True)
-    main_img = game_info.find("div", class_="large_media").div.img["src"]
-    genres = game_info.find("div", class_="summary_wrap").find("div", class_="section product_details").find(
-        "div", class_="side_details").ul.find("li", class_="product_genre").find_all("span")
+    # game_info = soup.find("div", class_="left")
+    game_info = soup.select_one("div.left")
+    # title = game_info.find("div", class_="content_head").find(
+    #     "div", class_="product_title").a.get_text(strip=True)
+    title = game_info.select_one(
+        "div.content_head div.product_title a").get_text(strip=True)
+
+    # platform = game_info.find("div", class_="content_head").find(
+    #     "div", class_="product_title").span.a.get_text(strip=True)
+    platform = game_info.select_one(
+        "div.content_head div.product_title span a").get_text(strip=True)
+    # company = game_info.find("div", class_="content_head").find(
+    #     "div", class_="product_data").ul.find("li", class_="publisher").find("span", class_="data").a.get_text(strip=True)
+    company = game_info.select_one(
+        "div.content_head div.product_data ul li.publisher span.data a").get_text(strip=True)
+    # release_date = game_info.find("div", class_="content_head").find(
+    #     "div", class_="product_data").ul.find("li", class_="release_data").find("span", class_="data").get_text(strip=True)
+    release_date = game_info.select_one(
+        "div.content_head div.product_data ul li.release_data span.data").get_text(strip=True)
+    # main_img = game_info.find("div", class_="large_media").div.img["src"]
+    main_img = game_info.select_one("div.large_media div img")['src']
+    # genres = game_info.find("div", class_="summary_wrap").find("div", class_="section product_details").find(
+    #     "div", class_="side_details").ul.find("li", class_="product_genre").find_all("span")
+    genres = game_info.select(
+        "div.summary_wrap div.section.product_details div.side_details ul li.product_genre span")
 
     genres = str_merge(genres)
 
@@ -102,12 +115,12 @@ def games_print(games):
 
 def get_games(url):
     last_page = get_last_page(url)
-    start_time = time.time()
+    # start_time = time.time()
     # games_print(extract_games(last_page, url))
     if __name__ == '__main__':
         pool = Pool(processes=4)
         pool.map(games_print, extract_games(last_page, url))
-    print("--- %s seconds ---" % (time.time() - start_time))
+    # print("--- %s seconds ---" % (time.time() - start_time))
 
 
 get_games(URL)

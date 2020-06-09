@@ -4,7 +4,9 @@ import path from "path";
 const pyFunction = () => {
   PythonShell.defaultOptions = { mode: "text", encoding: "utf-8" };
 
-  const pyshell = new PythonShell(path.join(__dirname, "../python/scrap_init.py"));
+  const pyshell = new PythonShell(
+    path.join(__dirname, "../python/scrap_init.py")
+  );
 
   // sends a message to the Python script via stdin
   pyshell.send("hello");
@@ -17,8 +19,8 @@ const pyFunction = () => {
   // end the input stream and allow the process to exit
   pyshell.end((err, code, signal) => {
     if (err) throw err;
-    console.log("The exit code was: " + code);
-    console.log("The exit signal was: " + signal);
+    console.log(`The exit code was: ${code}`);
+    console.log(`The exit signal was: ${signal}`);
     console.log("finished!!");
   });
 };
