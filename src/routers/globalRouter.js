@@ -1,14 +1,29 @@
 import express from "express";
 import routes from "../routes";
-import { getHome } from "../controllers/js/gameController";
-import { getJoin, getLogin } from "../controllers/js/userContrpoller";
+import { home, search } from "../controllers/js/gameController";
+import {
+  getJoin,
+  getLogin,
+  postJoin,
+  postLogin,
+  logout,
+  getMe,
+} from "../controllers/js/userContrpoller";
 
 const globalRouter = express.Router();
 
-globalRouter.get(routes.home, getHome);
+globalRouter.get(routes.home, home);
+
 globalRouter.get(routes.join, getJoin);
+globalRouter.post(routes.join, postJoin);
+
 globalRouter.get(routes.login, getLogin);
-globalRouter.get(routes.logout, (req, res) => res.send("You trying logout."));
-globalRouter.get(routes.search, (req, res) => res.send("This is search pages"));
+globalRouter.post(routes.login, postLogin);
+
+globalRouter.get(routes.logout, logout);
+
+globalRouter.get(routes.search, search);
+
+globalRouter.get(routes.me, getMe);
 
 export default globalRouter;

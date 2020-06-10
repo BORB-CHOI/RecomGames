@@ -1,0 +1,18 @@
+extends layouts/main
+include mixins/gameBlock
+
+block content
+    .search_header
+        h1 Your searching for: #{searchingBy}
+    hr
+    .search-games
+        each item in games
+            +gameBlock({
+                title:item.title,
+                company:item.company,
+                releaseDate:item.releaseDate,
+                platform:item.platform,
+                mainImg:item.mainImg,
+                genres:item.genres,
+                link:item.link
+            })

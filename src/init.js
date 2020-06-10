@@ -1,7 +1,10 @@
 // import pyfunction from "./controllers/scrapController";
+import dotenv from "dotenv";
 import app from "./app";
 
-const PORT = "9999";
+dotenv.config();
+
+const { PORT } = process.env;
 
 const handleListening = () => {
   console.log(`✔ Your LocalHost : http://localhost:${PORT}`);

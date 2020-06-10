@@ -6,8 +6,14 @@ header.header
             input(type="text",placeholder="Search by term...", name="term")
     .header__column
         ul
+        if !user.loggedUser
             li
                 a(href=routes.join) Join
             li
-                a(href=routes.login) login
+                a(href=routes.login) log In
+        else
+            li
+                a(href=routes.me) Profile
+            li
+                a(href=routes.logout) Log Out
     hr

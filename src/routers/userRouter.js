@@ -1,9 +1,14 @@
 import express from "express";
 import routes from "../routes";
-import { getUserProfile } from "../controllers/js/userContrpoller";
+import {
+  getUserProfile,
+  getChangePassword,
+} from "../controllers/js/userContrpoller";
 
 const userRouter = express.Router();
 
-userRouter.get(routes.userProfile, getUserProfile);
+userRouter.get(routes.editProfile, getUserProfile);
+
+userRouter.get(routes.changePassword, getChangePassword);
 
 export default userRouter;

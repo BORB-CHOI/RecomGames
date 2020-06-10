@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan"; //
 import helmet from "helmet"; // HTTP 헤더를 적절히 설정하여 몇가지 웹 취약성 으로부터 앱을 보호
-import bodyParser from "body-parser"; // html 태그를 가져 올 수 있음
+import bodyParser from "body-parser"; // 사용자가 보낸 정보를 읽기 위해. 없으면 post요청 처리 불가.
 import cookieParser from "cookie-parser"; // 브라우저의 쿠키 탐색
 import path from "path";
 import { localMiddleware } from "./middleware";

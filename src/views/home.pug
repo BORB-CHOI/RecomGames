@@ -5,6 +5,7 @@ block content
     .home-games
         each item in games
             +gameBlock({
+                id:item.id,
                 title:item.title,
                 company:item.company,
                 releaseDate:item.releaseDate,
