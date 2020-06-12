@@ -1,5 +1,5 @@
-// import pyfunction from "./controllers/scrapController";
 import dotenv from "dotenv";
+import pyFunction from "./controllers/js/scrapController";
 import app from "./app";
 
 dotenv.config();
@@ -12,4 +12,4 @@ const handleListening = () => {
 
 app.listen(PORT, handleListening);
 
-// pyfunction();
+pyFunction();

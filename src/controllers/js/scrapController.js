@@ -2,10 +2,10 @@ import { PythonShell } from "python-shell";
 import path from "path";
 
 const pyFunction = () => {
-  PythonShell.defaultOptions = { mode: "text", encoding: "utf-8" };
+  PythonShell.defaultOptions = { mode: "json", encoding: "utf-8" };
 
   const pyshell = new PythonShell(
-    path.join(__dirname, "../python/scrap_init.py")
+    path.join(__dirname, "../python/meta_scrap.py")
   );
 
   // sends a message to the Python script via stdin
@@ -13,7 +13,8 @@ const pyFunction = () => {
 
   pyshell.on("message", (message) => {
     // received a message sent from the Python script (a simple "print" statement)
-    console.log(message);
+    const gamesDB = message;
+    console.log(gamesDB);
   });
 
   // end the input stream and allow the process to exit
