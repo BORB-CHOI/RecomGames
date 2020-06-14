@@ -14,7 +14,6 @@ const pyFunction = () => {
   pyshell.on("message", (message) => {
     // received a message sent from the Python script (a simple "print" statement)
     const gamesDB = message;
-    console.log(gamesDB);
   });
 
   // end the input stream and allow the process to exit

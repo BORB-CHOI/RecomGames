@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import pyFunction from "./controllers/js/scrapController";
+import "./db";
 import app from "./app";
 
 dotenv.config();
