@@ -40,8 +40,15 @@ export const getMe = (req, res) => {
   res.render("userDetail");
 };
 
+export const userDetail = (req, res) => {
+  res.render("userDetail");
+};
+
 export const getUserProfile = (req, res) => {
   res.render("editProfile");
+};
+export const postUserProfile = (req, res) => {
+  res.redirect(routes.me);
 };
 
 export const getChangePassword = (req, res) => {

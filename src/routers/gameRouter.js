@@ -1,8 +1,10 @@
 import express from "express";
 import routes from "../routes";
-import { gameDetail } from "../controllers/js/gameController";
+import { gameDetail, search } from "../controllers/js/gameController";
 
 const gameRouter = express.Router();
+
+gameRouter.get(routes.search, search);
 
 gameRouter.get(routes.gameDetail(), gameDetail);
 

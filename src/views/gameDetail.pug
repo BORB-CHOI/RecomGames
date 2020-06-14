@@ -1,5 +1,18 @@
 extends layouts/main
 
 block content
-    .game-detail
-        h1 This is Game Deatil Page!! ID: #{id}
+    .game__detail
+        .game__info
+            h1.game__title #{game.title} 
+            img.game__img(src=game.mainImg width=200 height=250)
+            h4.game__company company: #{game.company}
+            h4.game__releaseDate releaseDate: #{game.releaseDate}
+            h4.game__platform platform: #{game.platform}
+            a.game__link(href=game.link target='blank') Go Link
+        .game__video
+        hr
+        .game__comments
+            if game.comments.length === 1
+                span.game__comment-number 1 comment
+            else
+                span.game__comment-number #{game.comments.length} comments

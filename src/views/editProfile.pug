@@ -2,4 +2,10 @@ extends layouts/main
 
 block content 
     .form-container
-        h1 Edit Profile Page
+        form(action=`/users${routes.editProfile}` method="post" enctype="multipart/form-data")
+            .fileUpload
+                label(for="avatar") Avatar
+                input(type="file", id="avatar", name="avatar" accept="image/*" )
+            input(type="text", placeholder="Name", name="name")
+            input(type="email", placeholder="Email", name="email")
+            input(type="submit", value="Update Profile")

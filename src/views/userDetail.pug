@@ -3,3 +3,4 @@ extends layouts/main
 block content
     .user-detail
         h1 This is User Detail page. Your ID for: #{user.id}
+        a(href=`/users${routes.editProfile}`) Edit Profile

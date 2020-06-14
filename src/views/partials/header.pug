@@ -2,7 +2,7 @@ header.header
     .header__column
         a(href=routes.home) home
     .header__column
-        form(action=routes.search, method="get")
+        form(action=`/games${routes.search}`, method="get")
             input(type="text",placeholder="Search by term...", name="term")
     .header__column
         ul
@@ -13,7 +13,7 @@ header.header
                 a(href=routes.login) log In
         else
             li
-                a(href=routes.me) Profile
+                a(href=`/users${routes.me}`) Profile
             li
                 a(href=routes.logout) Log Out
     hr

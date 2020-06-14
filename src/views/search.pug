@@ -6,8 +6,11 @@ block content
         h1 Your searching for: #{searchingBy}
     hr
     .search-games
-        each item in games
+        if searchedGames.length === 0
+            h1 No Games Found.
+        each item in searchedGames
             +gameBlock({
+                id: item.id,
                 title:item.title,
                 company:item.company,
                 releaseDate:item.releaseDate,

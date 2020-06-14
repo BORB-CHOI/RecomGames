@@ -2,6 +2,7 @@
 package-lock.json
 .eslintrc.json
 .gitattributes
+uploads
 
 # Logs
 logs
