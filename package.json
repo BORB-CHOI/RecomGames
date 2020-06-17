@@ -4,7 +4,9 @@
   "description": "A site that uses web crawling or APIs to extract game information and recommend games based on that information.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/init.js"
+    "dev:server": "nodemon --exec babel-node src/init.js",
+    "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack",
+    "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -22,22 +24,26 @@
     "@babel/node": "^7.10.1",
     "@babel/polyfill": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
-    "@babel/runtime": "^7.10.2",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
+    "css-loader": "^3.6.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^3.22.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "mongoose": "^5.9.18",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "nodemon": "^2.0.4",
+    "postcss-loader": "^3.0.0",
     "pug": "^2.0.4",
     "python-shell": "^2.0.1",
+    "sass-loader": "^8.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.21.1"

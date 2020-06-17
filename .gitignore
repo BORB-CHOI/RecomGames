@@ -3,6 +3,8 @@ package-lock.json
 .eslintrc.json
 .gitattributes
 uploads
+static
+build
 
 # Logs
 logs
