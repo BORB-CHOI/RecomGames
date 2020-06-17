@@ -4,8 +4,8 @@
   "description": "A site that uses web crawling or APIs to extract game information and recommend games based on that information.",
   "main": "index.js",
   "scripts": {
-    "dev:server": "nodemon --exec babel-node src/init.js",
-    "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack",
+    "dev:server": "nodemon --exec babel-node src/init.js --ignore '.scss'",
+    "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
     "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack"
   },
   "repository": {
@@ -24,6 +24,8 @@
     "@babel/node": "^7.10.1",
     "@babel/polyfill": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
+    "autoprefixer": "^9.8.0",
+    "babel-loader": "^8.1.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "css-loader": "^3.6.0",
@@ -34,6 +36,7 @@
     "mongoose": "^5.9.18",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
+    "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "postcss-loader": "^3.0.0",
     "pug": "^2.0.4",

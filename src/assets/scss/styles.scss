@@ -1,3 +1,4 @@
+@import "config/variables";
 body {
-  background-color: red;
+  background-color: $bgColor;
 }
