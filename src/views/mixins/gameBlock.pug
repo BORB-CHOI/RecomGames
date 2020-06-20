@@ -1,11 +1,9 @@
 mixin gameBlock(game = {})
-    .gameBlock  
-        a(href=routes.gameDetail(game.id))
-            h1 #{game.title}
-            h2 #{game.company}
-            h3 #{game.releaseDate}
-            h4 #{game.platform}
-            img(src=game.mainImg)
-            h6 #{game.genres}
-            a(href=game.link target="blank") Go link
-            
+    .game-block          
+        .block__img
+            a(href=routes.gameDetail(game.id))
+                img(src=game.mainImg)
+        .block__text
+            span.block__title #{game.title}
+            span.block__platform #{game.platform}
+            span.block__genres #{game.genres}

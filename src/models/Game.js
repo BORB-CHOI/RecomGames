@@ -6,7 +6,7 @@ const GameSchema = new mongoose.Schema({
   releaseDate: Number,
   platform: String,
   mainImg: String,
-  genres: String,
+  genres: Array,
   link: { type: String, required: "Link is None" },
   comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
 });

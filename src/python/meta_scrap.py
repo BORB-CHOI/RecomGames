@@ -47,13 +47,13 @@ def trans_RD(date):
 
 
 def str_merge(strings):
-    merged_str = ""
+    merged_str = []
     for nth in range(len(strings)-1):
-        if nth > 0:
+        if nth > 0:  # 0번째 칸의 내용이 gendsr: 라고 필요없는 내용이라 그 이상부터 시작
             if strings[nth].string != strings[nth+1].string:
-                merged_str += f", {strings[nth+1].string}"
+                merged_str.append(strings[nth+1].string)
         else:
-            merged_str += strings[nth+1].string
+            merged_str.append(strings[nth+1].string)
     return merged_str
 
 
@@ -97,6 +97,27 @@ def extract_games(last_page, url):
         game = extract_gmae(game_url)
         games.append(game)
         game_url = results[2].div.a["href"]
+        game = extract_gmae(game_url)
+        games.append(game)
+        game_url = results[3].div.a["href"]
+        game = extract_gmae(game_url)
+        games.append(game)
+        game_url = results[4].div.a["href"]
+        game = extract_gmae(game_url)
+        games.append(game)
+        game_url = results[5].div.a["href"]
+        game = extract_gmae(game_url)
+        games.append(game)
+        game_url = results[6].div.a["href"]
+        game = extract_gmae(game_url)
+        games.append(game)
+        game_url = results[7].div.a["href"]
+        game = extract_gmae(game_url)
+        games.append(game)
+        game_url = results[8].div.a["href"]
+        game = extract_gmae(game_url)
+        games.append(game)
+        game_url = results[9].div.a["href"]
         game = extract_gmae(game_url)
         games.append(game)
         games = sorted(games, key=itemgetter('releaseDate'))

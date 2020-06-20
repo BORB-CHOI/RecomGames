@@ -4,7 +4,7 @@
   "description": "A site that uses web crawling or APIs to extract game information and recommend games based on that information.",
   "main": "index.js",
   "scripts": {
-    "dev:server": "nodemon --exec babel-node src/init.js --ignore '.scss'",
+    "dev:server": "nodemon --ignore src/static/* --exec babel-node src/init.js",
     "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
     "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack"
   },

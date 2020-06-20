@@ -1,19 +1,20 @@
 header.header
     .header__column
-        a(href=routes.home) home
+        a(href=routes.home)
+            i.fas.fa-gamepad
+            span RG
     .header__column
         form(action=`/games${routes.search}`, method="get")
-            input(type="text",placeholder="Search by term...", name="term")
+            input(type="text",placeholder="Search", name="term", autocomplete="off")
     .header__column
         ul
-        if !user.loggedUser
-            li
-                a(href=routes.join) Join
-            li
-                a(href=routes.login) log In
-        else
-            li
-                a(href=`/users${routes.me}`) Profile
-            li
-                a(href=routes.logout) Log Out
-    hr
+            if !user.loggedUser
+                li
+                    a(href=routes.join) Join
+                li
+                    a(href=routes.login) log In
+            else
+                li
+                    a(href=`/users${routes.me}`) Profile
+                li
+                    a(href=routes.logout) Log Out

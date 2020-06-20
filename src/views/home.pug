@@ -2,15 +2,12 @@ extends layouts/main
 include mixins/gameBlock
 
 block content
-    .home-games
+    section.home-games
         each item in games
             +gameBlock({
                 id:item.id,
                 title:item.title,
-                company:item.company,
-                releaseDate:item.releaseDate,
                 platform:item.platform,
                 mainImg:item.mainImg,
                 genres:item.genres,
-                link:item.link
             })

@@ -1,4 +1,10 @@
 @import "config/variables";
-body {
-  background-color: $bgColor;
-}
+@import "config/reset.scss";
+
+@import "partials/header.scss";
+@import "partials/footer.scss";
+@import "partials/gameBlock.scss";
+
+@import "pages/home.scss";
+
+@import "./main.scss";
