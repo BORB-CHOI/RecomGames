@@ -1,11 +1,10 @@
 .game-block {
-  height: 300px;
+  height: 350px;
   border-radius: 15px;
-
   .block__img {
-    height: 200px;
+    height: 250px;
     border-radius: 15px 15px 0px 0px;
-    border: 5px ridge rgba(250, 250, 250, 0.1);
+    border: 5px ridge $blockBorder;
     img {
       border-radius: 15px 15px 0px 0px;
       width: 100%;
@@ -13,6 +12,30 @@
     }
   }
   .block__text {
+    * {
+      width: 100%;
+      border-bottom: 5px ridge $blockBorder;
+      border-right: 5px ridge $blockBorder;
+      border-left: 5px ridge $blockBorder;
+      padding: 5px 10px 5px 10px;
+      font-family: "Krona One", sans-serif;
+    }
+    // 타이틀
+    :first-child {
+      font-size: 16px;
+      line-height: 17px;
+    }
+    // 지원 플랫폼
+    :nth-child(2) {
+      font-size: 11px;
+      line-height: 17px;
+    }
+    // 장르
+    :last-child {
+      border-radius: 0px 0px 15px 15px;
+      font-size: 11px;
+      line-height: 17px;
+    }
     display: flex;
     flex-direction: column;
   }

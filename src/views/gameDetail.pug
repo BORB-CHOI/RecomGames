@@ -4,14 +4,15 @@ block content
     .game-detail
         section.game__info
             h1.info__title #{game.title} 
-            img.info__img(src=game.mainImg)
+            .img-frame
+                img.info__img(src=game.mainImg)
             h4.info__company company: #{game.company}
             h4.info__releaseDate releaseDate: #{game.releaseDate}
             h4.info__platform platform: #{game.platform}
-            a.info__link(href=game.link target='blank') Go Link
+            .info__link
+                a(href=game.link target='blank') Go Link
         section.game__video
-            span This is Video section
-        hr
+            span This is Video section        
         section.game__comments
             if game.comments.length === 1
                 span.game__comment-number 1 comment

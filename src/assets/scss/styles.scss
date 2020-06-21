@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Krona+One&display=swap");
+
 @import "config/variables";
 @import "config/reset.scss";
 
@@ -6,5 +8,7 @@
 @import "partials/gameBlock.scss";
 
 @import "pages/home.scss";
+@import "pages/search.scss";
+@import "pages/gameDetail.scss";
 
 @import "./main.scss";

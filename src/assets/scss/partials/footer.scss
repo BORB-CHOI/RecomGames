@@ -1,10 +1,9 @@
 .footer {
   height: 400px;
-  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #111111;
+  background-color: $sideBg;
   flex-direction: column;
   .footer__icon {
     margin-bottom: 10px;

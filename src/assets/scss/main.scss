@@ -2,17 +2,16 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: #292929;
-  color: white;
+  background-color: $bg;
+  color: $font;
 }
 
 main {
   margin: 0 auto;
   margin-top: 70px;
-  padding-top: 20px;
   width: 100%;
   max-width: 1600px;
-  min-height: 80vh;
+  min-height: 83vh; //pages가 너무 줄어들었을 때 footer가 중간 쯤에 위치하는 걸 방지
 }
 
 hr {

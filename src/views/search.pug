@@ -2,9 +2,8 @@ extends layouts/main
 include mixins/gameBlock
 
 block content
-    .search_header
-        h1 Your searching for: #{searchingBy}
-    hr
+    .search-by
+        h1 Your searching for: '#{searchingBy}'
     .search-games
         if searchedGames.length === 0
             h1 No Games Found.
