@@ -37,11 +37,11 @@ export const logout = (req, res) => {
 };
 
 export const getMe = (req, res) => {
-  res.render("userDetail");
+  res.render("userProfile");
 };
 
-export const userDetail = (req, res) => {
-  res.render("userDetail");
+export const userProfile = (req, res) => {
+  res.render("userProfile");
 };
 
 export const getUserProfile = (req, res) => {

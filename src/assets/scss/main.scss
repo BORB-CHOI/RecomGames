@@ -8,9 +8,8 @@ body {
 
 main {
   margin: 0 auto;
-  margin-top: 70px;
-  width: 100%;
-  max-width: 1600px;
+  padding-top: 70px;
+  max-width: 1200px;
   min-height: 83vh; //pages가 너무 줄어들었을 때 footer가 중간 쯤에 위치하는 걸 방지
 }
 

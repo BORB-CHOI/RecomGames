@@ -8,7 +8,7 @@ A site that uses web crawling or APIs to extract game information and recommend 
 - [ ] Join
 - [ ] Login
 - [x] Search
-- [ ] User Detail
+- [x] User Profile
 - [ ] Edit Profile
 - [ ] Change Password
 - [x] Game Detail

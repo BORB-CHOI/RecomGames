@@ -4,6 +4,7 @@ const UserSchema = new mongoose.Schema({
   name: { type: String, required: "Name is required" },
   email: { type: String, match: /.+@.+@..+/ },
   avatarUrl: String,
+  tags: Array,
 });
 
 const model = mongoose.model("User", UserSchema);

@@ -8,6 +8,12 @@ export const uploadAvatar = multerAvatar.single("avatar");
 export const localMiddleware = (req, res, next) => {
   res.locals.siteName = "Recom Games";
   res.locals.routes = routes;
-  res.locals.user = { loggedUser: true, id: 23 };
+  res.locals.user = {
+    loggedUser: true,
+    id: 23,
+    avatarUrl: "asdf",
+    name: "BORB",
+    email: "abc@naver.com",
+  };
   next();
 };

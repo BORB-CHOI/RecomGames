@@ -5,7 +5,7 @@ import {
   getChangePassword,
   postUserProfile,
   getMe,
-  userDetail,
+  userProfile,
 } from "../controllers/js/userContrpoller";
 import { uploadAvatar } from "../middleware";
 
@@ -18,5 +18,5 @@ userRouter.get(routes.changePassword, getChangePassword);
 
 userRouter.get(routes.me, getMe);
 
-userRouter.get(routes.userDetail(), userDetail);
+userRouter.get(routes.userProfile(), userProfile);
 export default userRouter;

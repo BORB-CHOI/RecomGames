@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import "./db";
 import app from "./app";
 
-import pyScraping from "./scrap";
+// import pyScraping from "./scrap";
 
 import "./models/Game";
 import "./models/User";
@@ -10,7 +10,7 @@ import "./models/Comment";
 
 dotenv.config();
 
-pyScraping();
+// pyScraping();
 
 const { PORT } = process.env;
 

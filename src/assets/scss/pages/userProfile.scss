@@ -1,0 +1,67 @@
+.user-detail {
+  margin: 100px 0px 100px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  :nth-child(n) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .user-detail__header {
+    width: 300px;
+    border-top: 1px solid $grayBorder;
+    border-bottom: 1px solid $grayBorder;
+    background: linear-gradient(
+      to right,
+      rgba(41, 41, 41, 1) 0%,
+      rgba(28, 28, 28, 1) 50%,
+      rgba(41, 41, 41, 1) 100%
+    );
+    .user-avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: $grayBorder;
+    }
+  }
+  .user-detail__main {
+    margin: 30px 0px 30px 0px;
+    flex-direction: column;
+    .user-name {
+      font-weight: 600;
+    }
+    .user-email {
+      margin-top: 30px;
+    }
+  }
+  .user-detail__btns {
+    margin-top: 10px;
+    justify-content: space-between;
+    a {
+      button {
+        width: 120px;
+        height: 45px;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 12px;
+        color: $font;
+        background-color: $sideBg;
+        box-shadow: 0px 10px 10px -9px rgb(255, 255, 255);
+        &:hover {
+          cursor: pointer;
+        }
+        &:active {
+          transform: translateY(3px);
+        }
+      }
+    }
+    :last-child {
+      button {
+        margin-left: 10px;
+      }
+    }
+  }
+}
