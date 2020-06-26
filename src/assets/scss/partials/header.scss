@@ -5,7 +5,7 @@
   padding: 0px 10px 0px 10px;
   display: grid;
   grid-template-columns: repeat(1, 0.65fr 2.6fr 0.65fr); // 1줄에 1:2:1 비울
-  background-color: $sideBg;
+  background-color: $blackBackground;
   position: fixed;
   top: 0;
   .header__column {

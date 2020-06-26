@@ -5,12 +5,12 @@ A site that uses web crawling or APIs to extract game information and recommend 
 ## Pages:
 
 - [x] Home
-- [ ] Join
-- [ ] Login
+- [x] Join
+- [x] Login
 - [x] Search
 - [x] User Profile
-- [ ] Edit Profile
-- [ ] Change Password
+- [x] Edit Profile
+- [x] Change Password
 - [x] Game Detail
 
 ## API:

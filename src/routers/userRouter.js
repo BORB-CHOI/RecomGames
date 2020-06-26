@@ -6,7 +6,7 @@ import {
   postUserProfile,
   getMe,
   userProfile,
-} from "../controllers/js/userContrpoller";
+} from "../controllers/userContrpoller";
 import { uploadAvatar } from "../middleware";
 
 const userRouter = express.Router();

@@ -1,5 +1,5 @@
-import Game from "../../models/Game";
-import routes from "../../routes";
+import Game from "../models/Game";
+import routes from "../routes";
 
 export const home = async (req, res) => {
   try {

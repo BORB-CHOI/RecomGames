@@ -1,6 +1,8 @@
 .game-block {
-  height: 350px;
+  height: 380px;
   border-radius: 15px;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12),
+    0 1px 2px rgba(255, 255, 255, 0.24);
   .block__img {
     height: 250px;
     border-radius: 15px 15px 0px 0px;
@@ -15,8 +17,6 @@
     * {
       width: 100%;
       border-bottom: 5px ridge $blockBorder;
-      border-right: 5px ridge $blockBorder;
-      border-left: 5px ridge $blockBorder;
       padding: 5px 10px 5px 10px;
       font-family: "Krona One", sans-serif;
     }
@@ -32,7 +32,6 @@
     }
     // 장르
     :last-child {
-      border-radius: 0px 0px 15px 15px;
       font-size: 11px;
       line-height: 17px;
     }
