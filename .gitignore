@@ -5,6 +5,7 @@ package-lock.json
 uploads
 static
 build
+.vscode
 
 # Logs
 logs
