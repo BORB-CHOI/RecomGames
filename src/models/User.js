@@ -5,6 +5,7 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, match: /.+@.+@..+/ },
   avatarUrl: String,
   tags: Array,
+  steamId: Number,
 });
 
 const model = mongoose.model("User", UserSchema);
