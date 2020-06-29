@@ -6,8 +6,6 @@ block content
             img.user-avatar(src=user.avatarUrl)
         .user-detail__main
             h4.user-name #{user.name}
-            if user.loggedUser
-                h4.user-email #{user.email}
         .user-detail__btns
             a(href=`/users${routes.changePassword}`)
                 button Change password

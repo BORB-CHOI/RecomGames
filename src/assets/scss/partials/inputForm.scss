@@ -20,7 +20,7 @@
       padding: 12px 25px;
       display: flex;
       align-items: center;
-      background-color: $blackBackground;
+      background-color: $blackBackColor;
       box-shadow: 0 1px 3px rgb(255, 255, 255),
         0 1px 2px rgba(255, 255, 255, 0.12);
       label {
@@ -34,7 +34,7 @@
       width: 100%;
       border-radius: 25px;
       padding: 12px 25px;
-      background-color: $blackBackground;
+      background-color: $blackBackColor;
       box-shadow: 0 1px 3px rgb(255, 255, 255),
         0 1px 2px rgba(255, 255, 255, 0.12);
       font-weight: 600;

@@ -8,7 +8,7 @@ header.header
             input(type="text",placeholder="Search", name="term", autocomplete="off")
     .header__column
         ul
-            if !user.loggedUser
+            if !user.isAuthenticated
                 li
                     a(href=routes.join) Join
                 li
