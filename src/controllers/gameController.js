@@ -1,6 +1,8 @@
 import Game from "../models/Game";
 import routes from "../routes";
 
+// Home
+
 export const home = async (req, res) => {
   try {
     const games = await Game.find({});
@@ -10,6 +12,8 @@ export const home = async (req, res) => {
     res.render("home", { games: [] });
   }
 };
+
+// Search
 
 export const search = async (req, res) => {
   // req.query.term 을 searchin gBy으로 한다.
@@ -28,6 +32,8 @@ export const search = async (req, res) => {
   }
   res.render("search", { searchingBy, searchedGames });
 };
+
+// Detail
 
 export const gameDetail = async (req, res) => {
   const {
