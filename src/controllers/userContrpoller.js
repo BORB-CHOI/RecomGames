@@ -22,8 +22,8 @@ export const postJoin = async (req, res, next) => {
         id,
         name,
       });
-      // register == 등륵하다, 사용자가 고유한지 확인
-      User.register(user, password);
+      // register == 등륵하다, 사용자가 고유한지 확인하고 등륵
+      await User.register(user, password);
       next();
     } catch (error) {
       console.log(error);

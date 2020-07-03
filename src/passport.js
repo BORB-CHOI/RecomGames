@@ -10,5 +10,5 @@ passport.use(User.createStrategy());
 
 // 쿠키에 user.id 만 담음. (보편적으로 id만 넣음)
 passport.serializeUser(User.serializeUser());
-// 쿠키 해석 (이것도 기본값)
+// 쿠키 해석 (이것도 기본값) 모든 경로에 req.user 생성해줌
 passport.deserializeUser(User.deserializeUser());
