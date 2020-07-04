@@ -4,7 +4,7 @@ from operator import itemgetter
 import time
 import json
 
-URL = "https://www.metacritic.com/browse/games/release-date/available/pc/metascore"
+URL = "https://www.metacritic.com/browse/games/score/metascore/all/pc"
 
 
 def get_last_page(url):
@@ -61,8 +61,8 @@ def extract_gmae(game_url):
     response = requests.get(
         f"https://www.metacritic.com{game_url}", headers={"User-Agent": "Mozilla"})
     soup = BeautifulSoup(response.text, "html.parser")
-
     game_info = soup.select_one("div.left")
+
     title = game_info.select_one(
         "div.content_head > div.product_title > a").get_text(strip=True)
     platform = game_info.select_one(
@@ -88,36 +88,39 @@ def extract_games(last_page, url):
         response = requests.get(f"{url}?page={page}",
                                 headers={"User-Agent": "Mozilla"})
         soup = BeautifulSoup(response.text, "html.parser")
-        results = soup.find_all("li", class_="game_product")
+        results = soup.select("td.clamp-image-wrap > a")
         # for result in results:
-        game_url = results[0].div.a["href"]
+        game_url = results[0]["href"]
         game = extract_gmae(game_url)
         games.append(game)
-        game_url = results[1].div.a["href"]
+        game_url = results[1]["href"]
         game = extract_gmae(game_url)
         games.append(game)
-        game_url = results[2].div.a["href"]
+        game_url = results[2]["href"]
         game = extract_gmae(game_url)
         games.append(game)
-        game_url = results[3].div.a["href"]
+        game_url = results[3]["href"]
         game = extract_gmae(game_url)
         games.append(game)
-        game_url = results[4].div.a["href"]
+        game_url = results[4]["href"]
         game = extract_gmae(game_url)
         games.append(game)
-        game_url = results[5].div.a["href"]
+        game_url = results[5]["href"]
         game = extract_gmae(game_url)
         games.append(game)
-        game_url = results[6].div.a["href"]
+        game_url = results[6]["href"]
         game = extract_gmae(game_url)
         games.append(game)
-        game_url = results[7].div.a["href"]
+        game_url = results[7]["href"]
         game = extract_gmae(game_url)
         games.append(game)
-        game_url = results[8].div.a["href"]
+        game_url = results[8]["href"]
         game = extract_gmae(game_url)
         games.append(game)
-        game_url = results[9].div.a["href"]
+        game_url = results[9]["href"]
+        game = extract_gmae(game_url)
+        games.append(game)
+        game_url = results[10]["href"]
         game = extract_gmae(game_url)
         games.append(game)
         games = sorted(games, key=itemgetter('releaseDate'))

@@ -16,6 +16,11 @@ const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 const ME = "/me";
 
+// Auth API
+const AUTH = "/auth";
+const STEAM = "/steam";
+const SETAM_RETURN = "/steam/return";
+
 const routes = {
   home: HOME,
   join: JOIN,
@@ -39,6 +44,9 @@ const routes = {
     }
     return GAME_DETAIL;
   },
+  auth: AUTH,
+  steam: STEAM,
+  steamReturn: SETAM_RETURN,
 };
 
 export default routes;

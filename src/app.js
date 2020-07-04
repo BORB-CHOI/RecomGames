@@ -12,6 +12,7 @@ import routes from "./routes"; // URL들이 정의된 파일 가져옴
 import globalRouter from "./routers/globalRouter"; // 경로지정자 파일 가져옴
 import gameRouter from "./routers/gameRouter";
 import userRouter from "./routers/userRouter";
+import authApiRotuer from "./routers/authApiRouter";
 
 import "./passport";
 
@@ -43,6 +44,7 @@ app.use(localMiddleware);
 
 app.use(routes.users, userRouter);
 app.use(routes.games, gameRouter);
+app.use(routes.auth, authApiRotuer);
 app.use(routes.home, globalRouter); // /:URL
 
 export default app;
