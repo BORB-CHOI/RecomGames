@@ -1,6 +1,6 @@
 import express from "express";
 import routes from "../routes";
-import { getSteamLogin, postSteamLogin } from "../controllers/userController";
+import { getSteamLogin, postSteamLogin } from "../controllers/apiController";
 
 const authApiRouter = express.Router();
 

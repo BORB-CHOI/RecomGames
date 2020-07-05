@@ -45,36 +45,6 @@ export const postLogin = passport.authenticate("local", {
   successRedirect: routes.home,
 });
 
-// Steam Login API
-
-export const getSteamLogin = passport.authenticate("steam");
-
-export const steamLoginReturn = async (_, profile, done) => {
-  const {
-    _json: { steamid, personaname, avatarfull },
-  } = profile;
-  try {
-    const user = await User.findOne({ id: steamid });
-    if (user) {
-      return done(null, user);
-    }
-    const newUser = await User.create({
-      id: steamid,
-      name: personaname,
-      avatarUrl: avatarfull,
-    });
-    return done(null, newUser);
-  } catch (error) {
-    console.log(error);
-    return done(error);
-  }
-};
-
-export const postSteamLogin = passport.authenticate("steam", {
-  failureRedirect: routes.login,
-  successRedirect: routes.home,
-});
-
 // Log Out
 
 export const logout = (req, res) => {

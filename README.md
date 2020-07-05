@@ -16,7 +16,7 @@ A site that uses web crawling or APIs to extract game information and recommend 
 ## API:
 
 - [x] User Authentication
-- [ ] Steam API
+- [o] Steam API
 - [ ] Youtube API
 - [ ] Discord API
 

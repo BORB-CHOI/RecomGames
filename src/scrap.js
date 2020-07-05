@@ -1,4 +1,5 @@
 import { PythonShell } from "python-shell";
+import axios from "axios";
 import path from "path";
 import Game from "./models/Game";
 
@@ -8,7 +9,22 @@ const gameUpload = async (games) => {
     const gameExist = await Game.exists({ title: game.title });
     console.log(gameExist);
     if (!gameExist) {
-      Game.create({
+      await axios({
+        method: "get",
+        url: "https://www.googleapis.com/youtube/v3/search",
+        params: {
+          key: "AIzaSyDthmI0hcHhF7l_3hSluaiDcjFt3PCjc4s",
+          part: "id",
+          q: `${game.title}`,
+          type: "video",
+          topicId: "/m/0bzvm2",
+          videoCategoryId: "20",
+        },
+      }).then((response) => {
+        console.log(response.data);
+        // video ID 가져와서 url로 만든 후 스키마에 주소 저장
+      });
+      await Game.create({
         title: game.title,
         company: game.company,
         releaseDate: game.releaseDate,
