@@ -1,7 +1,7 @@
 import passport from "passport";
 import SteamStrategy from "passport-steam";
 import User from "./models/User";
-import { steamLoginReturn } from "./controllers/userController";
+import { steamLoginReturn } from "./controllers/apiController";
 
 // passport는 쿠키 생성, 쿠키 설정, 쿠키 해석 기능 지원
 

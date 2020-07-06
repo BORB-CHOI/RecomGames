@@ -13,7 +13,7 @@ const gameUpload = async (games) => {
         method: "get",
         url: "https://www.googleapis.com/youtube/v3/search",
         params: {
-          key: "AIzaSyDthmI0hcHhF7l_3hSluaiDcjFt3PCjc4s",
+          key: process.env.YOUTUBE_API_KEY,
           part: "id",
           q: `${game.title}`,
           type: "video",
