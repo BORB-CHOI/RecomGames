@@ -86,6 +86,7 @@ export const postEditProfile = async (req, res) => {
     // multer가 주는 멋진 req.file.path middleware에서 경로 설정과 갯수 설정은 이미 함.
   } = req;
   try {
+    console.log(file);
     await User.findByIdAndUpdate(req.user._id, {
       name: name || req.user.name,
       avatarUrl: file ? file.path : req.user.avatarUrl,

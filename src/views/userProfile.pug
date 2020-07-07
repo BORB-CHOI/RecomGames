@@ -3,7 +3,7 @@ extends layouts/main
 block content
     .user-detail
         .user-detail__header
-            img.user-avatar(src=user.avatarUrl)
+            img.user-avatar(src=`/${user.avatarUrl}`)
         .user-detail__main
             h4.user-name #{user.name}
         .user-detail__btns

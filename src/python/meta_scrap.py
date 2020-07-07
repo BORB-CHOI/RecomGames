@@ -102,28 +102,27 @@ def extract_games(last_page, url):
         game_url = results[3]["href"]
         game = extract_gmae(game_url)
         games.append(game)
-        game_url = results[4]["href"]
-        game = extract_gmae(game_url)
-        games.append(game)
-        game_url = results[5]["href"]
-        game = extract_gmae(game_url)
-        games.append(game)
-        game_url = results[6]["href"]
-        game = extract_gmae(game_url)
-        games.append(game)
-        game_url = results[7]["href"]
-        game = extract_gmae(game_url)
-        games.append(game)
-        game_url = results[8]["href"]
-        game = extract_gmae(game_url)
-        games.append(game)
-        game_url = results[9]["href"]
-        game = extract_gmae(game_url)
-        games.append(game)
-        game_url = results[10]["href"]
-        game = extract_gmae(game_url)
-        games.append(game)
-        games = sorted(games, key=itemgetter('releaseDate'))
+        # game_url = results[4]["href"]
+        # game = extract_gmae(game_url)
+        # games.append(game)
+        # game_url = results[5]["href"]
+        # game = extract_gmae(game_url)
+        # games.append(game)
+        # game_url = results[6]["href"]
+        # game = extract_gmae(game_url)
+        # games.append(game)
+        # game_url = results[7]["href"]
+        # game = extract_gmae(game_url)
+        # games.append(game)
+        # game_url = results[8]["href"]
+        # game = extract_gmae(game_url)
+        # games.append(game)
+        # game_url = results[9]["href"]
+        # game = extract_gmae(game_url)
+        # games.append(game)
+        # game_url = results[10]["href"]
+        # game = extract_gmae(game_url)
+        # games.append(game)
     return games
 
 

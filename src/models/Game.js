@@ -9,6 +9,7 @@ const GameSchema = new mongoose.Schema({
   genres: Array,
   link: { type: String, required: "Link is None" },
   comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
+  videoLinks: Array,
 });
 
 const model = mongoose.model("Game", GameSchema);
