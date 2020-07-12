@@ -2,7 +2,7 @@
   margin: 0px 80px 0px 80px;
   height: 100%;
   .game__info {
-    .info__title {
+    .title {
       padding-top: 20px;
       font-size: 60px;
     }
@@ -32,7 +32,7 @@
       border-bottom: 1px solid $grayBorder;
       text-align: center;
     }
-    .info__link {
+    .link {
       border: none;
     }
   }
@@ -43,7 +43,7 @@
     border-bottom: 1px solid $grayBorder;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: linear-gradient(
       to right,
       rgba(41, 41, 41, 1) 0%,
@@ -51,6 +51,40 @@
       rgba(41, 41, 41, 1) 100%
     );
     font-size: 30px;
+    .videos {
+      width: 720px;
+      overflow: hidden;
+      ul {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+    }
+    .angleButton {
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.5s ease;
+      cursor: pointer;
+      &.left {
+        height: 100%;
+        margin-left: 30px;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.199);
+        }
+      }
+      &.right {
+        height: 100%;
+        margin-right: 30px;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.199);
+        }
+      }
+      i {
+        font-size: 100px;
+        color: $grayBorder;
+      }
+    }
   }
   .game__comments {
     width: 70%;

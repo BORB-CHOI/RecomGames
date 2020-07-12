@@ -16,14 +16,13 @@ A site that uses web crawling or APIs to extract game information and recommend 
 ## API:
 
 - [x] User Authentication
-- [o] Steam API
-- [ ] Youtube API
-- [ ] Discord API
+- [x] Steam API
+- [x] Youtube API
 
 ## Function:
 
+- [x] Auto Scraping
 - [ ] Recommend Game
-- [ ] Auto Scraping
 
 ## Deploy:
 

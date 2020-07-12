@@ -41,7 +41,6 @@ export const gameDetail = async (req, res) => {
   } = req;
   try {
     const game = await Game.findById(id);
-    console.log(game);
     res.render(`gameDetail`, { game });
   } catch (error) {
     console.log(error);

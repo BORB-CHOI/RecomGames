@@ -32,7 +32,7 @@ const gameUpload = async (games) => {
             const {
               id: { videoId },
             } = item;
-            youtubeLinks.push(`https://www.youtube.com/watch?v=${videoId}`);
+            youtubeLinks.push(videoId);
           });
           return youtubeLinks;
         })
@@ -47,7 +47,7 @@ const gameUpload = async (games) => {
             genres: game.genres,
             link: game.link,
             comments: game.comments,
-            videoLinks: links,
+            videoIds: links,
           });
         });
     }

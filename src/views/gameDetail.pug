@@ -3,17 +3,25 @@ extends layouts/main
 block content
     .game-detail#jsGameDetail
         section.game__info
-            h1.info__title #{game.title} 
+            h1.title #{game.title} 
             .img-frame
-                img.info__img(src=game.mainImg)
-            h4.info__company company: #{game.company}
-            h4.info__releaseDate releaseDate: #{game.releaseDate}
-            h4.info__platform platform: #{game.platform}
-            .info__link
+                img.img(src=game.mainImg)
+            h4.company Company: #{game.company}
+            h4.releaseDate ReleaseDate: #{game.releaseDate}
+            h4.platform Platform: #{game.platform}
+            .link
                 a(href=game.link target='blank') Go Link
-        section.game__video
-            iframe(id="ytplayer", type="text/html", width="720", height="405",
-             src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1", frameborder="0", allowfullscreen)
+        section.game__video#jsVideosSection
+            .angleButton.left#jsPrevious
+                i.fas.fa-angle-left
+            .videos
+                ul#jsVidoesList
+                    each videoId in game.videoIds
+                        li.video
+                            iframe(id="ytplayer", type="text/html", width="720", height="405",
+                            src=`https://www.youtube.com/embed/${videoId}`, frameborder="0", allowfullscreen)
+            .angleButton.right#jsNext
+                i.fas.fa-angle-right
         section.game__comments
             if game.comments.length === 1
                 span.game__comment-number 1 comment
