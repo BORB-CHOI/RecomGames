@@ -105,9 +105,7 @@ export const getChangePassword = (req, res) => {
 };
 
 export const postChangePassword = async (req, res) => {
-  const {
-    body: { oldPassword, newPassword, newPassword1 },
-  } = req;
+  const { body: oldPassword, newPassword, newPassword1 } = req;
   try {
     if (newPassword !== newPassword1) {
       res.status(400); // 구글의 비번 자동저장 기능이 거슬리기에
