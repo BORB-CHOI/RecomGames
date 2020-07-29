@@ -3,7 +3,7 @@ const videoList = document.getElementById("jsVidoesList");
 const previous = document.getElementById("jsPrevious");
 const next = document.getElementById("jsNext");
 
-const UL_CSS = videoList.style;
+let UL_CSS;
 
 // 현재 페이지의 css 내용 가져와서 정규식으로 숫자만 추출 후 해당 숫자 값에 따라 페이지 변환
 
@@ -35,5 +35,6 @@ const init = () => {
 };
 
 if (videoSection) {
+  UL_CSS = videoList.style;
   init();
 }

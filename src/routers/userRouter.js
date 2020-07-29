@@ -16,7 +16,7 @@ userRouter.get(routes.editProfile, onlyPrivate, getEditProfile);
 userRouter.post(routes.editProfile, onlyPrivate, uploadAvatar, postEditProfile);
 
 userRouter.get(routes.changePassword, onlyPrivate, getChangePassword);
-userRouter.get(routes.changePassword, onlyPrivate, postChangePassword);
+userRouter.post(routes.changePassword, onlyPrivate, postChangePassword);
 
 userRouter.get(routes.me, onlyPrivate, getMe);
 
